@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:id="@+id/ranking_list_rank"
+            android:text="1st"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:textColor="#e0b13c" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center|left"
+            android:id="@+id/ranking_list_name"
+            android:text="KIMNAYONG"
+            android:textSize="25dp"
+            android:layout_weight="2"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:gravity="center|right"
+            android:id="@+id/ranking_list_debt"
+            android:text="100000"
+            android:textSize="25dp"
+            android:layout_weight="3"
+            android:textColor="#ea5647" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

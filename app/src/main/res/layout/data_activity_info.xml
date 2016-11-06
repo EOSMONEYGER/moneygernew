@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_data_layout">
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/info_act_list_check" />
+
+        <TextView
+            android:layout_width="146dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KIM NAYONG"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/info_act_list_name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="1200"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/info_act_list_debt"
+            android:layout_weight="619.43"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
