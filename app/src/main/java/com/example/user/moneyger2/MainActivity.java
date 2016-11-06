@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private final int FRAGMENT_CAL = 0;
     private final int FRAGMENT_INFO = 1;
-    private final int FRAGMENT_RANKING = 1;
-    private final int FRAGMENT_SEARCH = 1;
+    private final int FRAGMENT_RANKING = 2;
+    private final int FRAGMENT_SEARCH = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
