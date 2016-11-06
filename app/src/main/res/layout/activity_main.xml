@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        ></FrameLayout>
+        android:id="@+id/tab_fragment"></FrameLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -80,7 +80,8 @@
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
-            android:background="@drawable/icon_calender"/>
+            android:background="@drawable/icon_calender"
+            android:id="@+id/main_info_btn" />
 
         <ImageView
             android:layout_width="30dp"
