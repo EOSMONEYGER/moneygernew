@@ -83,13 +83,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tab_intent_btn:
-                // intent button 이 눌리면 IntentFragment 로
-                replaceFragment(FRAGMENT_INTENT);
+            case R.id.main_cal_btn:
+                replaceFragment(FRAGMENT_CAL);
                 break;
-            case R.id.tab_gallery_btn:
-                // gallery button 이 눌리면 GalleryFragment 로
-                replaceFragment(FRAGMENT_GALLERY);
+            case R.id.main_info_btn:
+                replaceFragment(FRAGMENT_INFO);
+                break;
+            case R.id.main_search_btn:
+                replaceFragment(FRAGMENT_SEARCH);
+                break;
+            case R.id.main_ranking_btn:
+                replaceFragment(FRAGMENT_RANKING);
                 break;
         }
     }
