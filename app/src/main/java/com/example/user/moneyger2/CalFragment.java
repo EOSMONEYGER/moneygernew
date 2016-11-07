@@ -20,7 +20,7 @@ public class CalFragment extends Fragment implements View.OnClickListener{
 
     @Nullable
 
-    public static int Total=0;
+    public static int Total_money=0;
     private EditText total_money;
     @Override
 
@@ -50,13 +50,13 @@ public class CalFragment extends Fragment implements View.OnClickListener{
             return;
         }
 
-        Total = 0;
-        Total = Integer.parseInt(total_money.getText().toString());
+        Total_money = 0;
+        Total_money = Integer.parseInt(total_money.getText().toString());
 
         switch (view.getId()){
             case R.id.cal_simple_btn:
                 intent = new Intent(getActivity(), CalSimpleActivity.class);
-                intent.putExtra("total", Total);
+                intent.putExtra("total_money", Total_money);
                 startActivity(intent);
                 break;
             case R.id.cal_origin_btn:
