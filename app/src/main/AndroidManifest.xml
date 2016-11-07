@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".CalOriginActivity"></activity>
         <activity android:name=".CalSimpleActivity"></activity>
+        <activity android:name=".CalResultListActivity"></activity>
     </application>
 
 </manifest>
