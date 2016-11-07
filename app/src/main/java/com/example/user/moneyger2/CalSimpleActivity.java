@@ -27,7 +27,7 @@ public class CalSimpleActivity extends Activity{
         resultBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(CalSimpleActivity.this, CalSimpleActivity.class);
+                Intent intent = new Intent(CalSimpleActivity.this, CalResultListActivity.class);
                 startActivity(intent);
             }
         });
