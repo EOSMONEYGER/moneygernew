@@ -14,7 +14,7 @@
         android:layout_weight="1"
         android:layout_height="80dp"
         android:layout_gravity="top"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
 
@@ -26,14 +26,22 @@
             android:background="@drawable/icon_settings"
             android:id="@+id/main_setting_btn" />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
         <ImageView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
             android:gravity="center"
             android:src="@drawable/moneyger_banner"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <Button
             android:layout_width="30dp"
@@ -55,66 +63,96 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_weight="1"
-        android:weightSum="7"
         android:layout_gravity="bottom"
         android:gravity="center"
         android:background="#e4f5db">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <Button
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="37dp"
-            android:layout_marginRight="22dp"
+            android:layout_marginLeft="15dp"
             android:background="@drawable/icon_cal"
             android:id="@+id/main_cal_btn" />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/spacebar"/>
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:background="@drawable/icon_calender"
-
-
             android:id="@+id/main_info_btn" />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/spacebar"/>
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:background="@drawable/icon_search"
             android:id="@+id/main_search_btn" />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/spacebar"/>
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="35dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/icon_ranking"
             android:id="@+id/main_ranking_btn" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>
