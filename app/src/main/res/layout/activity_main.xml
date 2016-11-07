@@ -82,6 +82,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/icon_calender"
+
+
             android:id="@+id/main_info_btn" />
 
         <ImageView
