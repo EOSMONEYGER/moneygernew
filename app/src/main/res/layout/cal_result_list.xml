@@ -10,8 +10,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="New Text"
-            android:id="@+id/cal_result_text" />
+            android:text="RESULT"
+            android:id="@+id/cal_result_text"
+            android:textAlignment="center" />
 
         <ListView
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.example.user.moneyger2;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 import java.lang.reflect.AccessibleObject;
 import java.util.Random;
 
@@ -10,10 +11,11 @@ import java.util.Random;
  * Created by User on 2016-11-07.
  */
 public class CalResultListActivity extends Activity{
-    private int total=0, n=1;
+    private int total=10000, n=3;
     private String[] ph_num = new String[1000];
     private String[] names = new String[1000];
     private int[] result = new int[n];
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class CalResultListActivity extends Activity{
         setContentView(R.layout.cal_result_list);
 
         calculate();
+
 
     }
     public void calculate(){

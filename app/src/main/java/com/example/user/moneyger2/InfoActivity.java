@@ -6,11 +6,10 @@ import android.os.Bundle;
 /**
  * Created by User on 2016-11-07.
  */
-public class CalOriginActivity extends Activity{
+public class InfoActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cal_origin);
+        setContentView(R.layout.activity_info);
     }
-
-    }
+}

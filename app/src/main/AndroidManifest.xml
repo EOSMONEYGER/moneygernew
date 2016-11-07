@@ -22,7 +22,8 @@
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
             ></activity>
         <activity android:name=".CalResultListActivity"></activity>
-
+        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".InfoActivity"></activity>
     </application>
 
 </manifest>
