@@ -65,7 +65,7 @@
         android:layout_weight="1"
         android:layout_gravity="bottom"
         android:gravity="center"
-        android:background="#e4f5db">
+        android:background="#f5f3db">
 
         <Space
             android:layout_width="wrap_content"
