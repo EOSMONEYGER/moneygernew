@@ -18,6 +18,10 @@ public class CalSimpleActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cal_simple);
 
+        Intent gi = getIntent();
+
+        int total = gi.getIntExtra("total", 0);
+
         resultBtn = (Button)findViewById(R.id.cal_simple_next_btn);
 
         resultBtn.setOnClickListener(new View.OnClickListener(){

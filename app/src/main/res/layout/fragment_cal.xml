@@ -16,7 +16,8 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/cal_total_money_num"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp" />
 
     <LinearLayout
         android:orientation="horizontal"
