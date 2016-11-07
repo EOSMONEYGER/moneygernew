@@ -19,30 +19,29 @@
         android:paddingRight="10dp">
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="left|center_vertical"
-            android:background="#00000000"
-            android:text="Set"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/icon_settings"
             android:id="@+id/main_setting_btn" />
 
         <ImageView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
             android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
             android:gravity="center"
             android:src="@drawable/moneyger_banner"/>
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="right|center_vertical"
-            android:background="#00000000"
-            android:text="New Button"
-            android:id="@+id/main_" />
+            android:layout_marginRight="3dp"
+            android:background="@drawable/icon_question"
+            android:id="@+id/main_question" />
     </LinearLayout>
 
     <FrameLayout
@@ -62,10 +61,11 @@
         android:background="#e4f5db">
 
         <Button
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="22dp"
             android:background="@drawable/icon_cal"
             android:id="@+id/main_cal_btn" />
 
@@ -76,11 +76,14 @@
             android:src="@drawable/spacebar"/>
 
         <Button
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/icon_calender"
+
+
             android:id="@+id/main_info_btn" />
 
         <ImageView
@@ -90,10 +93,11 @@
             android:src="@drawable/spacebar"/>
 
         <Button
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/icon_search"
             android:id="@+id/main_search_btn" />
 
@@ -105,10 +109,11 @@
 
 
         <Button
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="35dp"
             android:background="@drawable/icon_ranking"
             android:id="@+id/main_ranking_btn" />
     </LinearLayout>
