@@ -2,12 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <CheckBox
-        android:layout_width="wrap_content"
+        android:layout_width="26dp"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox" />
+        android:id="@+id/address_chk"
+        android:layout_weight="0.14"
+        android:checked="false" />
 
     <TextView
         android:layout_width="wrap_content"

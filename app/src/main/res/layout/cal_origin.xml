@@ -12,9 +12,9 @@
         android:ems="10"
         android:id="@+id/cal_origin_search_edit" />
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="436dp"
         android:layout_gravity="bottom"
-        android:id="@+id/cal_address_book_list"/>
+        android:id="@+id/cal_addressbook_view"/>
 </LinearLayout>
