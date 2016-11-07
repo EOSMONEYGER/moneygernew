@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="7"
-    android:background="#338e5c">
+    android:background="#5a876e">
 
 
     <LinearLayout
@@ -30,8 +30,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
             android:gravity="center"
             android:src="@drawable/moneyger_banner"/>
 
