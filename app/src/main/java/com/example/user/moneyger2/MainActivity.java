@@ -1,5 +1,6 @@
 package com.example.user.moneyger2;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button infoBtn, calBtn, rankingBtn, searchBtn;
+    private Button infoBtn, calBtn, rankingBtn, searchBtn, settingBtn;
 
     private FragmentManager fm;
 
@@ -30,11 +31,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         infoBtn = (Button)findViewById(R.id.main_info_btn);
         searchBtn = (Button)findViewById(R.id.main_search_btn);
         rankingBtn = (Button)findViewById(R.id.main_ranking_btn);
+        settingBtn = (Button)findViewById(R.id.main_setting_btn) ;
 
         calBtn.setOnClickListener(this);
         infoBtn.setOnClickListener(this);
         searchBtn.setOnClickListener(this);
         rankingBtn.setOnClickListener(this);
+        settingBtn.setOnClickListener(this);
 
         replaceFragment(FRAGMENT_CAL);
     }
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             rankingBtn.setSelected(false);
             // Fragment switching
             ft.replace(R.id.tab_fragment, new SearchFragment());
-        } else {
+        } else if(position == FRAGMENT_RANKING) {
             /** 각 버튼의 Selected state 를 업데이트 **/
             calBtn.setSelected(false);
             infoBtn.setSelected(false);
@@ -94,6 +97,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.main_ranking_btn:
                 replaceFragment(FRAGMENT_RANKING);
+                break;
+            case R.id.main_setting_btn:
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
                 break;
         }
     }
