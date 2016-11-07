@@ -6,40 +6,48 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="55dp"
         android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:id="@+id/ranking_list_rank"
-            android:text="1st"
-            android:textSize="25dp"
             android:layout_weight="1"
-            android:textColor="#e0b13c" />
+            android:layout_marginLeft="13dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="right|center_vertical"
+            android:text="00th"
+            android:textSize="20sp"
+            android:textColor="#ffbcbc"
+            android:textStyle="bold"
+            android:id="@+id/ranking_list_rank"
+            />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:gravity="center|left"
-            android:id="@+id/ranking_list_name"
-            android:text="KIMNAYONG"
-            android:textSize="25dp"
-            android:layout_weight="2"
-            android:textColor="#000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:gravity="center|right"
-            android:id="@+id/ranking_list_debt"
-            android:text="100000"
-            android:textSize="25dp"
             android:layout_weight="3"
-            android:textColor="#ea5647" />
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="left|center_vertical"
+            android:text="NAME"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/ranking_list_name" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginRight="18dp"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="right|center_vertical"
+            android:text="100000원"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/ranking_list_debt"
+            android:textColor="#f5f3db" />
 
 
     </LinearLayout>

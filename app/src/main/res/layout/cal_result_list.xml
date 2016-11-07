@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="457dp">
+        android:layout_height="match_parent"
+        android:background="#f5f3db">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="RESULT"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:text="계산 결과"
+            android:textColor="#5a876e"
+            android:textSize="23sp"
             android:id="@+id/cal_result_text"
             android:textAlignment="center" />
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cal_result_listview"
-            android:layout_gravity="center_horizontal" />
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:background="#33ffffff"
+            android:id="@+id/cal_result_listview" />
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="fill_vertical"
+            android:background="#5a876e"
+            android:textSize="18sp"
+            android:textColor="#ffffffff"
             android:id="@+id/cal_result_save_btn"
-            android:layout_gravity="center_horizontal|right" />
+            android:src="@drawable/icon_next"
+            android:scaleType="fitCenter"/>
+
     </LinearLayout>
-</LinearLayout>
+

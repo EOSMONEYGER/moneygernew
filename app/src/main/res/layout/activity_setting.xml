@@ -2,56 +2,119 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:background="#5a876e">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:background="#f5f3db"
+        android:text="내 정보 수정"
+        android:textColor="#5a876e"
+        android:textSize="23sp"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="129dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#11ffffff">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Name"/>
+            android:text="이름"/>
+
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="4"
             android:text="My Name"
             android:id="@+id/setting_name_edit" />
+
+        <ImageButton
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:id="@+id/imageButton" />
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.43" >
+        android:layout_weight="2"
+        android:background="#11ffffff">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Bank Info" />
+            android:text="계좌 정보" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="84dp"
-                android:text="Bank Name"
-                android:id="@+id/setting_bank" />
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-            <EditText
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:text="Accout Number"
-                android:id="@+id/setting_account" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Bank Name"
+                    android:id="@+id/setting_bank" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="은행"
+                    android:id="@+id/textView" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton2"
+                    android:layout_gravity="right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="Accout Number"
+                    android:id="@+id/setting_account" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton3" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"/>
+
 </LinearLayout>
