@@ -24,6 +24,9 @@
         <activity android:name=".CalResultListActivity"></activity>
         <activity android:name=".SettingActivity"></activity>
         <activity android:name=".InfoActivity"></activity>
+
     </application>
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
 </manifest>

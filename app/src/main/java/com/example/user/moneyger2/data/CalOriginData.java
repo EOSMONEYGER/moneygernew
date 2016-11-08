@@ -7,7 +7,7 @@ public class CalOriginData {
     private String name,ph_num;
     private boolean check_state;//체크여부
 
-    public CalOriginData(boolean check_state, String name,String ph_num){
+    public CalOriginData(boolean check_state,String name,String ph_num){
         this.check_state = check_state;
         this.name = name;
         this.ph_num = ph_num;

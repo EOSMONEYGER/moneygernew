@@ -1,7 +1,9 @@
 package com.example.user.moneyger2;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -33,9 +35,21 @@ public class CalOriginActivity extends Activity{
 
     }
     public ArrayList<CalOriginData> getCal_originList() {
-        if (cal_originList.size() == 0) {
-            cal_originList.add(new CalOriginData(false,"김도현","010101010"));
+
+        String [] arrProjection = {
+                ContactsContract.Contacts._ID,
+                ContactsContract.Contacts.DISPLAY_NAME
+        };
+        Cursor clsCursor = getApplicationContext().getContentResolver().query(
+                ContactsContract.Contacts.CONTENT_URI,
+                arrProjection,
+                ContactsContract.Contacts.HAS_PHONE_NUMBER + "=1",
+                null, null
+        );
+        while(clsCursor.moveToNext()){
+            cal_originList.add(new CalOriginData(false,clsCursor.getString(1),clsCursor.getString(0)));
         }
+        clsCursor.close();
 
         return cal_originList;
     }
