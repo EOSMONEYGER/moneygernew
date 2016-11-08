@@ -2,56 +2,165 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:background="#f5f3db">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:background="#5a876e"
+        android:text="내 정보 수정"
+        android:textColor="#f5f3db"
+        android:textSize="23sp"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="129dp">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:background="#33ffffff">
+
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Name"/>
-        <EditText
-            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="이름"
+            android:textColor="#5a876e"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="My Name"
-            android:id="@+id/setting_name_edit" />
+            android:layout_weight="5">
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:hint="이름 입력"
+            android:textColorHint="#ff000000"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:src="@drawable/icon_edit"
+            android:scaleType="fitXY"
+            android:id="@+id/setting_name" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/setting_name_btn" />
 
     </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#88ffffff"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.43" >
+        android:gravity="center"
+        android:background="#33ffffff">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Bank Info" />
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="#11ffffff"
+            android:text="계좌 정보"
+            android:textColor="#5a876e"
+            android:textSize="20sp"/>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            >
 
-            <EditText
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="84dp"
-                android:text="Bank Name"
-                android:id="@+id/setting_bank" />
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="left|center_vertical"
+                >
 
-            <EditText
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:text="Accout Number"
-                android:id="@+id/setting_account" />
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="은행 이름"
+                    android:textColorHint="#ff000000"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:id="@+id/setting_bank" />
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_edit"
+                    android:scaleType="fitXY"
+                    android:id="@+id/setting_bank_btn" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                >
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="계좌 번호"
+                    android:textColorHint="#ff000000"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:id="@+id/setting_account" />
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_edit"
+                    android:scaleType="fitXY"
+                    android:id="@+id/setting_account_btn" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#88ffffff" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"/>
+
 </LinearLayout>

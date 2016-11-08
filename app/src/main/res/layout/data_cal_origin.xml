@@ -6,23 +6,28 @@
     android:weightSum="1">
 
     <CheckBox
-        android:layout_width="41dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/address_chk"
-        android:checked="false" />
-
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="13dp"
+        android:layout_gravity="center"
+        android:checked="false"
+        android:id="@+id/address_chk" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="3"
         android:text="dohyun"
-        android:id="@+id/address_name"
-        android:singleLine="true" />
+        android:textSize="20sp"
+        android:id="@+id/address_name"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="4"
+        android:paddingRight="13dp"
         android:text="010-4220-2282"
+        android:textSize="20sp"
         android:id="@+id/address_num" />
+
 </LinearLayout>

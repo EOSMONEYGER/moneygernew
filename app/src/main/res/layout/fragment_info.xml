@@ -2,29 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#11000000">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:id="@+id/info_title"
-        android:layout_gravity="center_horizontal|top"
-        android:background="#03470a"
-        android:text="INFORMATION"
-        android:textColor="#ffffff"/>
+
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/info_view"
-        android:paddingTop="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        />
 
 </LinearLayout>

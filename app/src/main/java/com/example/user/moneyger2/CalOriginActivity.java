@@ -40,6 +40,9 @@ public class CalOriginActivity extends Activity{
                 ContactsContract.Contacts._ID,
                 ContactsContract.Contacts.DISPLAY_NAME
         };
+        String [] arrPhoneProjection = {
+                ContactsContract.CommonDataKinds.Phone.NUMBER
+        };
         Cursor clsCursor = getApplicationContext().getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI,
                 arrProjection,
@@ -47,7 +50,21 @@ public class CalOriginActivity extends Activity{
                 null, null
         );
         while(clsCursor.moveToNext()){
-            cal_originList.add(new CalOriginData(false,clsCursor.getString(1),clsCursor.getString(0)));
+            String strContactId = clsCursor.getString(0);
+            //폰번호
+            Cursor clsPhoneCursor = getApplicationContext().getContentResolver().query(
+                    ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                    arrPhoneProjection,
+                    ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + strContactId,
+                    null, null
+            );
+            String ph_num ="";
+            while(clsPhoneCursor.moveToNext()){
+                ph_num += clsPhoneCursor.getString(0);
+            }
+            clsPhoneCursor.close();
+
+            cal_originList.add(new CalOriginData(false,clsCursor.getString(1),ph_num));
         }
         clsCursor.close();
 
