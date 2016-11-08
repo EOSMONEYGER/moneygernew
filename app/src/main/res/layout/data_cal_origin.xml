@@ -2,28 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_height="55dp"
+    android:gravity="center_vertical">
 
     <CheckBox
-        android:layout_width="26dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="13dp"
+        android:layout_gravity="center"
         android:id="@+id/address_chk"
-        android:layout_weight="0.14"
         android:checked="false" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="3"
         android:text="dohyun"
-        android:id="@+id/address_name"
-        android:singleLine="true" />
+        android:textSize="20sp"
+        android:id="@+id/address_name"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="4"
+        android:paddingRight="13dp"
         android:text="010-4220-2282"
+        android:textSize="20sp"
         android:id="@+id/address_num" />
+
 </LinearLayout>
