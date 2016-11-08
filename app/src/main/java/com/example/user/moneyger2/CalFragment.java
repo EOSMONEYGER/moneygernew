@@ -61,6 +61,7 @@ public class CalFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.cal_origin_btn:
                 intent = new Intent(getActivity(), CalOriginActivity.class);
+                intent.putExtra("total_money", Total_money);
                 startActivity(intent);
                 break;
         }

@@ -48,6 +48,11 @@ public class CalResultListActivity extends Activity{
                 names[i] = (i+1)+"";
             }
         }
+        else if(SOcheck == 2){
+            for(int i=0;i<n;i++){
+                names[i] = CalOriginActivity.checkedList.get(i).getName();
+            }
+        }
         calculate();
 
         cal_resView = (RecyclerView)findViewById(R.id.cal_result_view);

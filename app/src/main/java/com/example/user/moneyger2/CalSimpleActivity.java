@@ -48,6 +48,7 @@ public class CalSimpleActivity extends Activity{
                 intent.putExtra("total_person", Total_person);
                 intent.putExtra("total_money",Total_money);
                 startActivity(intent);
+                finish();
             }
         });
     }

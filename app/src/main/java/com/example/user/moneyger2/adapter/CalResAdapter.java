@@ -21,6 +21,7 @@ public class CalResAdapter extends RecyclerView.Adapter<CalResAdapter.ViewHolder
     private ArrayList<CalResData> calResList = new ArrayList<>(); // RecyclerView에 표시할 data list
     private Context context;
 
+
     /**
      *
      * @param context
@@ -75,7 +76,6 @@ public class CalResAdapter extends RecyclerView.Adapter<CalResAdapter.ViewHolder
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        CheckBox chk; // 내 item view 의 ImageView를 담을 인스턴스
         TextView name,debt;// 내 item view 의 TextView를 담을 인스턴스
 
         public ViewHolder(View itemView) {
