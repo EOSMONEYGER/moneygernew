@@ -18,8 +18,8 @@
             android:text="계산 결과"
             android:textColor="#5a876e"
             android:textSize="23sp"
-            android:id="@+id/cal_result_text"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:id="@+id/cal_result_text" />
 
         <ListView
             android:layout_width="match_parent"
@@ -37,9 +37,10 @@
             android:background="#5a876e"
             android:textSize="18sp"
             android:textColor="#ffffffff"
-            android:id="@+id/cal_result_save_btn"
             android:src="@drawable/icon_next"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:id="@+id/cal_result_save_btn"
+            />
 
     </LinearLayout>
 
