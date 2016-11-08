@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.user.moneyger2.adapter.CalResAdapter;
 import com.example.user.moneyger2.adapter.InfoActAdapter;
-import com.example.user.moneyger2.data.CalResData;
 import com.example.user.moneyger2.data.InfoActData;
 
 import java.util.ArrayList;
@@ -34,7 +32,7 @@ public class InfoActivity extends Activity {
     }
 
     public ArrayList<InfoActData> getInfoActList(){
-        info_actList.add(new InfoActData(false,"김나용","100원"));
+        info_actList.add(new InfoActData(false,"김나용","12790원"));
         return info_actList;
     }
 }

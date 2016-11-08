@@ -1,40 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/info_data_layout"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:weightSum="15">
+    android:orientation="vertical">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="53dp"
+    android:gravity="center"
+    android:orientation="horizontal">
 
 
     <CheckBox
         android:id="@+id/info_act_list_check"
-        android:layout_width="20dp"
+        android:layout_width="0dp"
         android:layout_height="20dp"
-        android:layout_gravity="center"
         android:layout_weight="1"
+        android:layout_marginLeft="10dp"
         android:checked="false"
-        android:gravity="center" />
+        android:gravity="center"
+        />
 
     <TextView
         android:id="@+id/info_act_list_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="7"
+        android:layout_weight="6"
+        android:gravity="center"
         android:text="dohyun"
+        android:textColor="#cc000000"
+        android:background="#22ffffff"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/info_act_list_debt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="7"
+        android:layout_weight="6"
         android:gravity="right|center_vertical"
-        android:paddingRight="13dp"
+        android:paddingRight="50dp"
         android:text="100000원"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#cc641818" />
 
 
 </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#44ffffff"/>
+</LinearLayout>
+

@@ -13,7 +13,8 @@
         android:layout_gravity="left|center_vertical"
         android:layout_weight="1"
         android:checked="false"
-        android:gravity="center" />
+        android:gravity="center"
+        android:buttonTint="#ccffffff"/>
 
     <TextView
         android:id="@+id/address_name"
@@ -22,7 +23,8 @@
         android:layout_weight="6"
         android:gravity="left|center_vertical"
         android:text="dohyun"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#ccffffff"/>
 
     <TextView
         android:id="@+id/address_num"
@@ -32,6 +34,7 @@
         android:gravity="left|center_vertical"
         android:paddingRight="13dp"
         android:text="010-4220-2282"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#aaffffff"/>
 
 </LinearLayout>

@@ -45,27 +45,24 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:background="#33ffffff"
                 android:gravity="center_vertical"
                 android:hint="이름 입력"
+                android:paddingLeft="15dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_edit"
-                android:textColor="#000000"
-                android:textColorHint="#ff000000"
+                android:textColor="#aa000000"
+                android:textColorHint="#88000000"
                 android:textSize="20sp" />
 
-            <ImageButton
-                android:id="@+id/setting_name_btn"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical" />
 
         </LinearLayout>
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#88ffffff" />
+        android:layout_height="2dp"
+        android:background="#77ffffff" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -107,18 +104,13 @@
                     android:id="@+id/setting_bank"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:background="#33ffffff"
                     android:hint="은행 이름"
-                    android:textColor="#000000"
-                    android:textColorHint="#ff000000"
+                    android:paddingLeft="15dp"
+                    android:textColor="#aa000000"
+                    android:textColorHint="#88000000"
                     android:textSize="20sp" />
 
-                <ImageButton
-                    android:id="@+id/setting_bank_btn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_edit" />
 
             </LinearLayout>
 
@@ -133,17 +125,12 @@
                     android:id="@+id/setting_account"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:background="#33ffffff"
                     android:hint="계좌 번호"
-                    android:textColor="#000000"
-                    android:textColorHint="#ff000000"
+                    android:paddingLeft="15dp"
+                    android:textColor="#aa000000"
+                    android:textColorHint="#88000000"
                     android:textSize="20sp" />
-
-                <ImageButton
-                    android:id="@+id/setting_account_btn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/icon_edit" />
             </LinearLayout>
 
         </LinearLayout>
@@ -152,8 +139,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#88ffffff" />
+        android:layout_height="2dp"
+        android:background="#77ffffff" />
 
     <Space
         android:layout_width="match_parent"

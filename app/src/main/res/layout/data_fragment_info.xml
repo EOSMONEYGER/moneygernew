@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="55dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/info_list_layout"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="54dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -47,5 +47,10 @@
             android:layout_marginRight="13dp"
             android:src="@drawable/icon_next_mini" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#11ffffff"/>
 
 </LinearLayout>

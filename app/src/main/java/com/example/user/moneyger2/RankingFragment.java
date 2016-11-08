@@ -9,9 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.user.moneyger2.adapter.InfoAdapter;
 import com.example.user.moneyger2.adapter.RankingAdapter;
-import com.example.user.moneyger2.data.InfoData;
 import com.example.user.moneyger2.data.RankingData;
 
 import java.util.ArrayList;
@@ -40,7 +38,13 @@ public class RankingFragment extends Fragment {
     }
     public ArrayList<RankingData> getRankingList() {
         if (rankingList.size() == 0) {
-            rankingList.add(new RankingData("1st","김나용","100won"));
+            rankingList.add(new RankingData("1위","김나용","100won"));
+            rankingList.add(new RankingData("2위","김나용아아아앙아앙아아","100won"));
+            rankingList.add(new RankingData("1st","김나용","1000000000원"));
+            rankingList.add(new RankingData("1st","김나ㅇ어어어어어어용","10000000000won"));
+            rankingList.add(new RankingData("10위","김나용","100won"));
+
+
         }
 
         return rankingList;
