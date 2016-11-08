@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
         android:id="@+id/info_data_layout">
 
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="13dp"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:checked="false"
             android:id="@+id/info_act_list_check" />
 
         <TextView
-            android:layout_width="146dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center_vertical"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="KIM NAYONG"
-            android:textSize="20dp"
-            android:textColor="#000000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="dohyun"
+            android:textSize="20sp"
             android:id="@+id/info_act_list_name" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="1200"
-            android:textSize="20dp"
-            android:textColor="#000000"
-            android:id="@+id/info_act_list_debt"
-            android:layout_weight="619.43"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:paddingRight="13dp"
+            android:text="100000원"
+            android:textSize="20sp"
+            android:id="@+id/info_act_list_debt" />
 
 
     </LinearLayout>
-
-</LinearLayout>
