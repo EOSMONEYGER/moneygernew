@@ -11,9 +11,9 @@
 
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.NoTitleBar"/>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -26,14 +26,17 @@
 
         <activity
             android:name=".CalSimpleActivity"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
-            ></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
         <activity android:name=".CalResultListActivity"></activity>
         <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".QuestionActivity"></activity>
         <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".QuestionInfoActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
     </application>
 
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
 
 </manifest>

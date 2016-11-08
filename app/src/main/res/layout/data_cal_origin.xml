@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:weightSum="15"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="15">
 
     <CheckBox
+        android:id="@+id/address_chk"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_weight="1"
         android:layout_gravity="left|center_vertical"
-        android:gravity="center"
+        android:layout_weight="1"
         android:checked="false"
-        android:id="@+id/address_chk" />
+        android:gravity="center" />
 
     <TextView
+        android:id="@+id/address_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="6"
         android:gravity="left|center_vertical"
         android:text="dohyun"
-        android:textSize="20sp"
-        android:id="@+id/address_name"/>
+        android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/address_num"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="8"
         android:gravity="left|center_vertical"
         android:paddingRight="13dp"
         android:text="010-4220-2282"
-        android:textSize="20sp"
-        android:id="@+id/address_num" />
+        android:textSize="20sp" />
 
 </LinearLayout>

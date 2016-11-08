@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f3db"
+    android:orientation="vertical"
+    android:weightSum="13">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        android:layout_weight="2"
+        android:background="#5a876e"
+        android:gravity="center"
+        android:text="어플리케이션 정보"
+        android:textColor="#f5f3db"
+        android:textSize="23sp"/>
+
+
+    <Button
+        android:id="@+id/question_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1.5"
+        android:background="#33ffffff"
+        android:text="개발 정보"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:onClick="onClickQ"/>
+
+
+    <Button
+        android:id="@+id/question_email"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1.5"
+        android:background="#00ffffff"
+        android:text="이메일 문의"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:onClick="onClickQ"/>
+
+    <Button
+        android:id="@+id/question_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1.5"
+        android:background="#33ffffff"
+        android:text="문자 문의"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:onClick="onClickQ"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5" />
+
+</LinearLayout>

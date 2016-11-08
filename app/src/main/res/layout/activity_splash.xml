@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="14"
+    android:background="#dd7aa78e"
     android:gravity="center"
-    android:background="#dd7aa78e">
+    android:orientation="vertical"
+    android:weightSum="14">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:src="@drawable/icon_moneyger"
-        />
+        android:src="@drawable/icon_moneyger" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:src="@drawable/moneyger_banner"
-        />
+        android:src="@drawable/moneyger_banner" />
 
 
 </LinearLayout>

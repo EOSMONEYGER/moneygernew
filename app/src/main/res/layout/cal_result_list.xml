@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f3db"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cal_result_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f5f3db">
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="계산 결과"
+        android:textAlignment="center"
+        android:textColor="#5a876e"
+        android:textSize="23sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="top"
-            android:gravity="center"
-            android:text="계산 결과"
-            android:textColor="#5a876e"
-            android:textSize="23sp"
-            android:textAlignment="center"
-            android:id="@+id/cal_result_text" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cal_result_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:background="#33ffffff" />
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="9"
-            android:background="#33ffffff"
-            android:id="@+id/cal_result_view" />
+    <ImageButton
+        android:id="@+id/cal_result_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="#5a876e"
+        android:gravity="fill_vertical"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_next"
+        android:textColor="#ffffffff"
+        android:textSize="18sp" />
 
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:gravity="fill_vertical"
-            android:background="#5a876e"
-            android:textSize="18sp"
-            android:textColor="#ffffffff"
-            android:src="@drawable/icon_next"
-            android:scaleType="fitCenter"
-            android:id="@+id/cal_result_save_btn"
-            />
-
-    </LinearLayout>
+</LinearLayout>
 

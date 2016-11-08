@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5a876e">
+    android:background="#5a876e"
+    android:orientation="vertical">
 
     <EditText
+        android:id="@+id/cal_origin_search_edit"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:inputType="textPersonName"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:paddingLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#11000000"
         android:gravity="left|center_vertical"
         android:hint="이름을 입력해주세요."
-        android:background="#11000000"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
         android:textColorHint="#ffffffff"
-        android:textSize="18sp"
         android:textCursorDrawable="@null"
-        android:id="@+id/cal_origin_search_edit" />
+        android:textSize="18sp" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/cal_addressbook_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/cal_addressbook_view"/>
+        android:layout_marginRight="20dp" />
 
 
 </LinearLayout>

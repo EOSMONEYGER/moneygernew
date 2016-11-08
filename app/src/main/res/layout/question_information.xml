@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="280dp"
     android:layout_height="200dp"
@@ -6,19 +7,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/cal_total_person_num"
-        android:layout_width="230dp"
-        android:layout_height="38dp"
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#50ffffff"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="총 인원 수를 입력해주세요."
-        android:inputType="number"
-        android:textColorHint="#ff000000"
-        android:textCursorDrawable="@null"
-        android:textSize="18sp" />
+        android:text="New Text" />
+
 
     <Space
         android:layout_width="match_parent"
@@ -26,7 +22,7 @@
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:id="@+id/cal_simple_next_btn"
+        android:id="@+id/question_info_back"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:background="#5a876e"

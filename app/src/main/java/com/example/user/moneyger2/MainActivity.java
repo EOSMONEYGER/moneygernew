@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button infoBtn, calBtn, rankingBtn, searchBtn, settingBtn;
+    private Button infoBtn, calBtn, rankingBtn, searchBtn, settingBtn, questionBtn;
 
     private FragmentManager fm;
 
@@ -35,12 +35,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         searchBtn = (Button)findViewById(R.id.main_search_btn);
         rankingBtn = (Button)findViewById(R.id.main_ranking_btn);
         settingBtn = (Button)findViewById(R.id.main_setting_btn) ;
+        questionBtn = (Button)findViewById(R.id.main_question_btn);
 
         calBtn.setOnClickListener(this);
         infoBtn.setOnClickListener(this);
         searchBtn.setOnClickListener(this);
         rankingBtn.setOnClickListener(this);
         settingBtn.setOnClickListener(this);
+        questionBtn.setOnClickListener(this);
 
         replaceFragment(FRAGMENT_CAL);
     }
@@ -104,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_setting_btn:
                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.main_question_btn:
+                Intent intent2 = new Intent(MainActivity.this, QuestionActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
