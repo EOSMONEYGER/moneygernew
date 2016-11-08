@@ -39,7 +39,6 @@ public class InfoFragment extends Fragment {
     public ArrayList<InfoData> getInfoList() {
         if (infoList.size() == 0) {
             infoList.add(new InfoData("2016.04.21", "에오스 회합", R.drawable.icon_settings));
-            infoList.add(new InfoData("1220.22.22", "오아아아ㅏㅇfrrrrrrrrr아ㅏㅏㅏㅇ", R.drawable.icon_settings));
             infoList.add(new InfoData("1220.23.22", "rjqegqgo2", R.drawable.icon_settings));
         }
 

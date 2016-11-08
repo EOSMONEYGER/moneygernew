@@ -20,14 +20,14 @@
         android:id="@+id/info_act_title"
         />
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
         android:background="#33ffffff"
         android:id="@+id/info_act_list"
         >
-    </ListView>
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:layout_width="match_parent"

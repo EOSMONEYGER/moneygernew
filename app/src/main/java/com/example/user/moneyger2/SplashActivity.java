@@ -10,6 +10,7 @@ import android.os.Message;
  */
 public class SplashActivity extends Activity{
 
+    public static int check=0;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

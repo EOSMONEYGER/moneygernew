@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startActivity(new Intent(this, SplashActivity.class));
+        if(SplashActivity.check == 0) {
+            startActivity(new Intent(this, SplashActivity.class));
+            SplashActivity.check++;
+        }
         setContentView(R.layout.activity_main);
 
         // FragmentManager 객체 초기화

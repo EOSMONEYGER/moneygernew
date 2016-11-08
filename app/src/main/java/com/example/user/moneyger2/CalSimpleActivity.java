@@ -44,6 +44,7 @@ public class CalSimpleActivity extends Activity{
                 Total_person = 0;
                 Total_person = Integer.parseInt(total_person.getText().toString());
                 Intent intent = new Intent(CalSimpleActivity.this, CalResultListActivity.class);
+                intent.putExtra("SOcheck",1);
                 intent.putExtra("total_person", Total_person);
                 intent.putExtra("total_money",Total_money);
                 startActivity(intent);

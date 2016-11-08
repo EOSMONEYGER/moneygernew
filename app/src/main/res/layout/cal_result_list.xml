@@ -21,12 +21,12 @@
             android:textAlignment="center"
             android:id="@+id/cal_result_text" />
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="9"
             android:background="#33ffffff"
-            android:id="@+id/cal_result_listview" />
+            android:id="@+id/cal_result_view" />
 
         <ImageButton
             android:layout_width="match_parent"
