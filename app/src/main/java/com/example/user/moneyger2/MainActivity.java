@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         if(SplashActivity.check == 0) {
             startActivity(new Intent(this, SplashActivity.class));
-            SplashActivity.check++;
+            SplashActivity.check=1;
         }
         setContentView(R.layout.activity_main);
 
