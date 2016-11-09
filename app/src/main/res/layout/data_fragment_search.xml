@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="60dp"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/search_list_check"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center"
-            android:checked="false" />
+            android:layout_weight="1"
+            android:checked="false"
+            android:gravity="center" />
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:orientation="vertical">
 
             <TextView
@@ -30,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
                 android:textSize="20dp" />
 
             <TextView
@@ -39,20 +41,27 @@
                 android:layout_height="wrap_content"
                 android:text="phone number"
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#99ffffff"
                 android:textSize="15dp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/search_list_debt"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_weight="4"
+            android:gravity="right|center_vertical"
+            android:paddingRight="20dp"
             android:text="10000"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#000000"
+            android:textColor="#f5f3db"
             android:textSize="20dp" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#05000000"/>
 
 
 </LinearLayout>
