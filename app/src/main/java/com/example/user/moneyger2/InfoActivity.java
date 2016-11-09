@@ -35,6 +35,7 @@ public class InfoActivity extends Activity {
     private RecyclerView info_actView;
     private ArrayList<InfoActData> info_actList = new ArrayList<>();
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,9 +54,6 @@ public class InfoActivity extends Activity {
         // 만들어 둔 IntentAdapter를 RecyclerView에 셋팅
         info_actView.setAdapter(new InfoActAdapter(InfoActivity.this, getInfoActList()));
 
-
-
-
         final ImageButton info_act_send_btn = (ImageButton)findViewById(R.id.info_act_send_btn);
 
         info_act_send_btn.setOnClickListener(new View.OnClickListener(){
@@ -69,17 +67,19 @@ public class InfoActivity extends Activity {
                 String strAccount = SP.getString("account", "");
 
 
-                int intPh_num = 0;
+                int intPh_num = 0; String Debt = ""; String Date = ""; String Gathering = "";
                 for(int i=0;i<info_actList.size();i++){
                     if(info_actList.get(i).isCheck_state() == true){
                         String strPh_num = info_actList.get(i).getPh_num();
                         intPh_num = Integer.parseInt(strPh_num);
+                        Debt = info_actList.get(i).getDebt();
+
                     }
                 }
 
                 Uri uri = Uri.parse("smsto://" + intPh_num);
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n"+strName+"에게 "+strBank+" "+strAccount+"로\n"+"입금해주세요.^^");
+                intent.putExtra("sms_body","[MONEYGER]\n"+"2016.11.10\n"+title.getText()+"에서 발생한\n비용 "+Debt+"을\n"+strName+"에게 "+strBank+" "+strAccount+"로\n"+"입금해주세요.^^");
                 startActivity(intent);
             }
         });

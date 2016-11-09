@@ -5,41 +5,60 @@
     android:layout_margin="15dp"
     android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/search_edit"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="이름을 입력하세요."
-            android:textColor="#ffffff"
-            android:textColorHint="#88ffffff"
-            android:textSize="20sp"
+    <EditText
+        android:id="@+id/search_edit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#11000000"
+        android:hint="이름을 입력하세요."
+        android:textColor="#ffffff"
+        android:textColorHint="#88ffffff"
         android:textCursorDrawable="@null"
-        android:background="#11000000" />
+        android:paddingLeft="20dp"
+        android:textSize="20sp" />
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/search_list_view"
         android:layout_width="match_parent"
-        android:layout_height="381dp"
+        android:layout_height="0dp"
         android:layout_gravity="bottom"
         android:layout_marginTop="15dp"
+        android:layout_weight="5.5"
         android:background="#11ffffff" />
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="select"
-            android:id="@+id/search_select_btn" />
+            android:id="@+id/search_select_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#33ffffff"
+            android:text="모두"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#11ffffff"/>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="send"
-            android:id="@+id/search_send_btn" />
+            android:id="@+id/search_send_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#33ffffff"
+            android:text="독촉"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

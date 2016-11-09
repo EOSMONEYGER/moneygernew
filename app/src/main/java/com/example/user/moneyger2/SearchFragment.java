@@ -1,10 +1,6 @@
 package com.example.user.moneyger2;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,7 +18,6 @@ import android.widget.EditText;
 import com.example.user.moneyger2.adapter.SearchAdapter;
 import com.example.user.moneyger2.data.SearchData;
 import com.example.user.moneyger2.dbsql.DBManager;
-import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 
 import java.util.ArrayList;
 
@@ -114,14 +109,10 @@ public class SearchFragment extends Fragment{
         send_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(int i=0;i<search_fragList.size();i++){
-                    if(search_fragList.get(i).isCheck_state() == true){
-                        //search_fragList.get(i).getPh_num(); -> 폰번호 가져온거
-                    }
-                }
+
                 Uri uri = Uri.parse("smsto:01022865413");
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n김나용 신한 110438358091\n으로 입금해주세요.^^");
+                intent.putExtra("sms_body","[MONEYGER]\n"+"2016.11.13\n"+"EOS 정기 회합"+"\n작은딸애게 신한 110438358091"+"\n으로 입금해주세요.^^");
                 startActivity(intent);
             }
         });
