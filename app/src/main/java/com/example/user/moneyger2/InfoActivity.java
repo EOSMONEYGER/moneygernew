@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -58,6 +59,11 @@ public class InfoActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                for(int i=0;i<info_actList.size();i++){
+                    if(info_actList.get(i).isCheck_state() == true){
+                        //info_actList.get(i).getPh_num(); -> 폰번호 가져온거
+                    }
+                }
                 Uri uri = Uri.parse("smsto:01022865413");
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
                 intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n김나용 신한 110438358091\n으로 입금해주세요.^^");
@@ -80,7 +86,7 @@ public class InfoActivity extends Activity {
         Cursor csr = db.query(TABLE_NAME, null,"gathering=?",new String[]{gathering},null,null,null);
 
         while(csr.moveToNext()){//커서를 처음레코드부터 마지막레코드까지 이동하며 반복.//
-            info_actList.add(new InfoActData(false,csr.getString(1),csr.getString(3)+"원"));
+            info_actList.add(new InfoActData(false,csr.getString(1),csr.getString(3)+"원",csr.getString(csr.getColumnIndex("phonenum"))));
         };
         csr.close();
 

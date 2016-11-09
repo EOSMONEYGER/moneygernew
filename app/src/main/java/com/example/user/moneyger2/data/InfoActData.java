@@ -4,14 +4,18 @@ package com.example.user.moneyger2.data;
  * Created by User on 2016-11-08.
  */
 public class InfoActData {
-    private String name,debt;
+    private String name,debt,ph_num;
     private boolean check_state;//체크여부
 
-    public InfoActData(boolean check_state, String name, String debt){
+    public InfoActData(boolean check_state, String name, String debt,String ph_num){
         this.check_state = check_state;
         this.name = name;
         this.debt = debt;
+        this.ph_num = ph_num;
     }
+
+    public void setPh_num(String ph_num) {this.ph_num = ph_num;}
+    public String getPh_num() {return ph_num;}
 
     public String getName() {
         return name;
