@@ -53,14 +53,14 @@ public class CalResultListActivity extends Activity{
         else if(SOcheck == 2){
             n++;
             result = new int[n];
-            ph_num = new String[n];
-            names = new String[n];
+            ph_num = gi.getStringArrayExtra("ph_num");
+            names = gi.getStringArrayExtra("names");
+            for(int i=n-1;i>0;i--) {
+                names[i] = names[i - 1];
+                ph_num[i] = ph_num[i - 1];
+            }
             names[0] = "나";
             ph_num[0] = "00000";
-            for(int i=1;i<n;i++){
-                names[i] = CalOriginActivity.checkedList.get(i-1).getName();
-                ph_num[i] = CalOriginActivity.checkedList.get(i-1).getPh_num();
-            }
         }
         calculate();
 

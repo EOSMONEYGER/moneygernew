@@ -3,13 +3,18 @@ package com.example.user.moneyger2;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
 import com.example.user.moneyger2.adapter.InfoActAdapter;
 import com.example.user.moneyger2.data.InfoActData;
 
@@ -19,6 +24,14 @@ import java.util.ArrayList;
  * Created by User on 2016-11-07.
  */
 public class InfoActivity extends Activity {
+    SQLiteDatabase db;
+    MySQLOpenHelper helper;
+    private final static String TABLE_NAME = "debtlist";
+
+    private String gathering;
+
+    private TextView title;
+
     private RecyclerView info_actView;
     private ArrayList<InfoActData> info_actList = new ArrayList<>();
 
@@ -27,8 +40,13 @@ public class InfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        Intent gi = getIntent();
+        gathering = gi.getStringExtra("location");
 
+        title = (TextView)findViewById(R.id.info_act_title);
         info_actView = (RecyclerView)findViewById(R.id.info_act_list);
+
+        title.setText(gathering);
 
         // RecyclerView 에 LinearLayoutManager를 셋팅
         info_actView.setLayoutManager(new LinearLayoutManager(InfoActivity.this));
@@ -61,9 +79,20 @@ public class InfoActivity extends Activity {
     }
 
     public ArrayList<InfoActData> getInfoActList(){
-        info_actList.add(new InfoActData(false,"김나용","12790원"));
-        info_actList.add(new InfoActData(false,"김정욱","12790원"));
-        info_actList.add(new InfoActData(false,"김나용","190000원"));
+
+        helper = new MySQLOpenHelper(this);//헬퍼를 사용하여
+        try{
+            db = helper.getWritableDatabase();//DB를 쓰기가능으로 연다.
+        } catch(SQLiteException e){
+            db = helper.getReadableDatabase();//에러 시 읽기전용으로.
+        }
+
+        Cursor csr = db.query(TABLE_NAME, null,"gathering=?",new String[]{gathering},null,null,null);
+
+        while(csr.moveToNext()){//커서를 처음레코드부터 마지막레코드까지 이동하며 반복.//
+            info_actList.add(new InfoActData(false,csr.getString(1),csr.getString(3)+"원"));
+        };
+        csr.close();
 
         return info_actList;
     }
