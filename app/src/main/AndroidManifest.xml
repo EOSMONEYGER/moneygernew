@@ -33,6 +33,7 @@
         <activity android:name=".InfoActivity"></activity>
         <activity android:name=".QuestionInfoActivity"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
+        <activity android:name=".CalResNameActivity"></activity>
 
     </application>
 

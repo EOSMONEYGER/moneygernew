@@ -28,8 +28,8 @@ public class CalResultListActivity extends Activity{
     private ArrayList<CalResData> cal_resList = new ArrayList<>();
 
     private int total, n;
-    private String[] ph_num = new String[1000];
-    private String[] names = new String[1000];
+    private String[] ph_num;
+    private String[] names;
     private int[] result;
     private int SOcheck;
 
@@ -42,15 +42,24 @@ public class CalResultListActivity extends Activity{
         total = gi.getIntExtra("total_money",0);
         n = gi.getIntExtra("total_person",1);
         SOcheck = gi.getIntExtra("SOcheck",1);
-        result = new int[n];
         if(SOcheck == 1){
+            result = new int[n];
+            ph_num = new String[n];
+            names = new String[n];
             for(int i=0;i<n;i++){
                 names[i] = (i+1)+"";
             }
         }
         else if(SOcheck == 2){
-            for(int i=0;i<n;i++){
-                names[i] = CalOriginActivity.checkedList.get(i).getName();
+            n++;
+            result = new int[n];
+            ph_num = new String[n];
+            names = new String[n];
+            names[0] = "나";
+            ph_num[0] = "00000";
+            for(int i=1;i<n;i++){
+                names[i] = CalOriginActivity.checkedList.get(i-1).getName();
+                ph_num[i] = CalOriginActivity.checkedList.get(i-1).getPh_num();
             }
         }
         calculate();
@@ -66,8 +75,18 @@ public class CalResultListActivity extends Activity{
         cal_res_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CalResultListActivity.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent;
+                if(SOcheck == 1) {
+                    intent = new Intent(CalResultListActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else{
+                    intent = new Intent(CalResultListActivity.this, CalResNameActivity.class);
+                    intent.putExtra("total_person",n);
+                    intent.putExtra("names",names);
+                    intent.putExtra("ph_num",ph_num);
+                    intent.putExtra("result",result);
+                    startActivity(intent);
+                }
                 finish();
             }
         });
