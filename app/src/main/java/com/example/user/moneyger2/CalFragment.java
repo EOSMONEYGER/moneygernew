@@ -33,6 +33,7 @@ public class CalFragment extends Fragment implements View.OnClickListener{
         originBtn = (Button)view.findViewById(R.id.cal_origin_btn);
 
         total_money.setText("");
+        //total_money.setSelection(total_money.getHint().length());
 
         simpleBtn.setOnClickListener(this);
         originBtn.setOnClickListener(this);
