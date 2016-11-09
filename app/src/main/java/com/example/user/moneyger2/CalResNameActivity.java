@@ -9,8 +9,10 @@ import android.database.sqlite.SQLiteException;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 
@@ -24,7 +26,7 @@ public class CalResNameActivity extends Activity{
     MySQLOpenHelper helper;
     private final static String TABLE_NAME = "debtlist";
 
-    private ImageButton save_btn;
+    private Button save_btn;
     private EditText gathering;
 
     private String[] ph_num;
@@ -36,6 +38,7 @@ public class CalResNameActivity extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.cal_result_name);
 
         helper = new MySQLOpenHelper(this);//헬퍼를 사용하여
@@ -57,7 +60,7 @@ public class CalResNameActivity extends Activity{
 
         gathering = (EditText)findViewById(R.id.cal_result_name);
 
-        save_btn = (ImageButton)findViewById(R.id.cal_result_save_btn);
+        save_btn = (Button)findViewById(R.id.cal_result_save_btn);
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +85,8 @@ public class CalResNameActivity extends Activity{
                 Intent intent = new Intent(CalResNameActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
+                Toast.makeText(getBaseContext(), "모임 정보를 저장하였습니다.", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
