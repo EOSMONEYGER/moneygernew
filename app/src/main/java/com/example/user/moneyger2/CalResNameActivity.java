@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 
 import java.util.Calendar;
 

@@ -1,4 +1,4 @@
-package com.example.user.moneyger2.DBsql;
+package com.example.user.moneyger2.dbsql;
 
 import android.content.Context;
 import android.database.Cursor;

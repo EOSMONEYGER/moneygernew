@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 import com.example.user.moneyger2.adapter.InfoAdapter;
 import com.example.user.moneyger2.data.InfoData;
 

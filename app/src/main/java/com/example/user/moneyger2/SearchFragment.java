@@ -21,8 +21,8 @@ import com.example.user.moneyger2.adapter.SearchAdapter;
 import com.example.user.moneyger2.data.CalOriginData;
 import com.example.user.moneyger2.data.InfoActData;
 import com.example.user.moneyger2.data.SearchData;
-import com.example.user.moneyger2.DBsql.DBManager;
-import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
+import com.example.user.moneyger2.dbsql.DBManager;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 
 import java.util.ArrayList;
 
