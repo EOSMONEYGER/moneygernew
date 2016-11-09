@@ -1,6 +1,11 @@
 package com.example.user.moneyger2;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +16,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.user.moneyger2.adapter.SearchAdapter;
@@ -24,9 +30,7 @@ import java.util.ArrayList;
  * Created by User on 2016-11-06.
  */
 public class SearchFragment extends Fragment{
-    SQLiteDatabase db;
-    MySQLOpenHelper helper;
-    private final static String TABLE_NAME = "debtlist";
+    private Button select_btn, send_btn;
 
     private RecyclerView searchView;
     private EditText search_edit;
@@ -40,6 +44,10 @@ public class SearchFragment extends Fragment{
 
         searchView = (RecyclerView)view.findViewById(R.id.search_list_view);
         search_edit = (EditText)view.findViewById(R.id.search_edit);
+        select_btn = (Button)view.findViewById(R.id.search_select_btn);
+        send_btn = (Button)view.findViewById(R.id.search_send_btn);
+
+
         // RecyclerView 에 LinearLayoutManager를 셋팅
         searchView.setLayoutManager(new LinearLayoutManager(getActivity()));
         // 만들어 둔 IntentAdapter를 RecyclerView에 셋팅
@@ -72,6 +80,49 @@ public class SearchFragment extends Fragment{
                     searchView.setAdapter(new SearchAdapter(getActivity(), searchList));
                 }
 
+            }
+        });
+
+        select_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean ch = false;
+                if(searchList.size() != 0) {
+                    for (int i = 0; i < searchList.size(); i++) {
+                        if (searchList.get(i).isCheck_state() == false) ch = true;
+                        searchList.get(i).setCheck_state(true);
+                    }
+                    if (ch == false) {
+                        for (int i = 0; i < searchList.size(); i++)
+                            searchList.get(i).setCheck_state(false);
+                    }
+                    searchView.setAdapter(new SearchAdapter(getActivity(), searchList));
+                } else{
+                    for (int i = 0; i < search_fragList.size(); i++) {
+                        if (search_fragList.get(i).isCheck_state() == false) ch = true;
+                        search_fragList.get(i).setCheck_state(true);
+                    }
+                    if (ch == false) {
+                        for (int i = 0; i < search_fragList.size(); i++)
+                            search_fragList.get(i).setCheck_state(false);
+                    }
+                    searchView.setAdapter(new SearchAdapter(getActivity(), search_fragList));
+                }
+            }
+        });
+
+        send_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(int i=0;i<search_fragList.size();i++){
+                    if(search_fragList.get(i).isCheck_state() == true){
+                        //search_fragList.get(i).getPh_num(); -> 폰번호 가져온거
+                    }
+                }
+                Uri uri = Uri.parse("smsto:01022865413");
+                Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+                intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n김나용 신한 110438358091\n으로 입금해주세요.^^");
+                startActivity(intent);
             }
         });
 

@@ -5,12 +5,6 @@
     android:layout_margin="15dp"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/search_layout"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="#11000000">
-
         <EditText
             android:id="@+id/search_edit"
             android:layout_width="match_parent"
@@ -18,17 +12,34 @@
             android:hint="이름을 입력하세요."
             android:textColor="#ffffff"
             android:textColorHint="#88ffffff"
-            android:textSize="20sp" />
-
-    </android.support.v7.widget.Toolbar>
+            android:textSize="20sp"
+        android:textCursorDrawable="@null"
+        android:background="#11000000" />
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/search_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="381dp"
         android:layout_gravity="bottom"
         android:layout_marginTop="15dp"
         android:background="#11ffffff" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="select"
+            android:id="@+id/search_select_btn" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send"
+            android:id="@+id/search_send_btn" />
+    </LinearLayout>
 
 </LinearLayout>

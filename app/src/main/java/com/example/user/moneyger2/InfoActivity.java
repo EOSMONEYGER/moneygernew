@@ -56,7 +56,7 @@ public class InfoActivity extends Activity {
 
 
 
-        ImageButton info_act_send_btn = (ImageButton)findViewById(R.id.info_act_send_btn);
+        final ImageButton info_act_send_btn = (ImageButton)findViewById(R.id.info_act_send_btn);
 
         info_act_send_btn.setOnClickListener(new View.OnClickListener(){
 

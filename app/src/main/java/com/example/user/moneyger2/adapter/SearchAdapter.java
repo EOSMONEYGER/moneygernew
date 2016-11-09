@@ -1,6 +1,8 @@
 package com.example.user.moneyger2.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.example.user.moneyger2.R;
 import com.example.user.moneyger2.data.InfoActData;
 import com.example.user.moneyger2.data.SearchData;
+import com.example.user.moneyger2.dbsql.DBManager;
 
 import java.util.ArrayList;
 
@@ -54,7 +57,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
      * @param position 현재 그릴 item의 position (보통 현재 그릴 data 의 list index 와 같은 값을 가집니다)
      */
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         // 그려줄 IntentData 를 셋팅
         final SearchData search = searchList.get(position);
 
@@ -73,6 +76,35 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                         search.setCheck_state(true);//데이터 클래스 객체의 check_state값을 true로 초기화.
                     else//언체크드일 때
                         search.setCheck_state(false);//false로 초기화.
+                }
+            });
+
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(final View view) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());     // 여기서 this는 Activity의 this
+
+                    // 여기서 부터는 알림창의 속성 설정
+                    builder.setTitle("1")        // 제목 설정
+                            .setMessage("돈을 갚았습니까")        // 메세지 설정
+                            .setCancelable(false)        // 뒤로 버튼 클릭시 취소 가능 설정
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener(){
+                                // 확인 버튼 클릭시 설정
+                                public void onClick(DialogInterface dialog, int whichButton){
+                                    new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()));
+                                }
+                            })
+                            .setNegativeButton("취소", new DialogInterface.OnClickListener(){
+                                // 취소 버튼 클릭시 설정
+                                public void onClick(DialogInterface dialog, int whichButton){
+                                    dialog.cancel();
+                                }
+                            });
+
+
+                    AlertDialog dialog = builder.create();    // 알림창 객체 생성
+                    dialog.show();    // 알림창 띄우기
+                    return false;
                 }
             });
         }

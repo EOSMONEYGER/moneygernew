@@ -1,8 +1,10 @@
 package com.example.user.moneyger2.dbsql;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import com.example.user.moneyger2.data.RankingData;
 import com.example.user.moneyger2.data.SearchData;
@@ -13,6 +15,8 @@ import java.util.ArrayList;
  * Created by User on 2016-11-10.
  */
 public class DBManager {
+
+    private final static String TABLE_NAME = "debtlist";
     private Context context;
 
     private MySQLOpenHelper helper;
@@ -57,4 +61,31 @@ public class DBManager {
 
         return search;
     }
+
+    public void update(SearchData contact) {
+        ContentValues values = new ContentValues();
+
+        /** 각 column 의 값 셋팅 **/
+        values.put("name", contact.getName());
+        values.put("phonenum", contact.getPh_num());
+        values.put("debt", 0);
+
+        // contact table 의 data 중 cid 값이 입력받은 contact data 의 id 값과 일치하는 data 의 값을 수정합니다.
+        db.update(TABLE_NAME, values, "phonenum=?", new String[]{contact.getPh_num() + ""});
+
+        Toast.makeText(context, "수정되었습니다.", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Table 의 특정 data 를 삭제합니다.
+     *
+     * @param id 수정할 data 의 id
+     */
+    public void delete(int id) {
+        // contact table 의 data 중 cid 값이 입력받은 id 값과 일치하는 data 를 삭제합니다.
+        db.delete("contact", "cid=?", new String[]{id + ""});
+
+        Toast.makeText(context, "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+    }
+
 }
