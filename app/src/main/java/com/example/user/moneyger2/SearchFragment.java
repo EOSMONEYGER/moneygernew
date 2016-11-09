@@ -1,8 +1,6 @@
 package com.example.user.moneyger2;
 
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,13 +11,9 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.user.moneyger2.adapter.CalOriginAdapter;
 import com.example.user.moneyger2.adapter.SearchAdapter;
-import com.example.user.moneyger2.data.CalOriginData;
-import com.example.user.moneyger2.data.InfoActData;
 import com.example.user.moneyger2.data.SearchData;
 import com.example.user.moneyger2.dbsql.DBManager;
 import com.example.user.moneyger2.dbsql.MySQLOpenHelper;

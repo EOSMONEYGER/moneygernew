@@ -10,14 +10,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 import com.example.user.moneyger2.adapter.InfoActAdapter;
 import com.example.user.moneyger2.data.InfoActData;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 
 import java.util.ArrayList;
 
@@ -69,13 +68,16 @@ public class InfoActivity extends Activity {
                 String strBank = SP.getString("bank", "");
                 String strAccount = SP.getString("account", "");
 
+
+                int intPh_num = 0;
                 for(int i=0;i<info_actList.size();i++){
                     if(info_actList.get(i).isCheck_state() == true){
-                        //info_actList.get(i).getPh_num(); -> 폰번호 가져온거
+                        String strPh_num = info_actList.get(i).getPh_num();
+                        intPh_num = Integer.parseInt(strPh_num);
                     }
                 }
 
-                Uri uri = Uri.parse("smsto:01022865413");
+                Uri uri = Uri.parse("smsto://" + intPh_num);
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
                 intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n"+strName+"에게 "+strBank+" "+strAccount+"로\n"+"입금해주세요.^^");
                 startActivity(intent);
