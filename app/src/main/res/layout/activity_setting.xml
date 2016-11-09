@@ -38,11 +38,12 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/setting_name"
-                android:layout_width="150dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="#33ffffff"
@@ -50,11 +51,10 @@
                 android:hint="이름 입력"
                 android:paddingLeft="15dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/icon_edit"
+                android:singleLine="true"
                 android:textColor="#aa000000"
                 android:textColorHint="#88000000"
                 android:textSize="20sp" />
-
 
         </LinearLayout>
     </LinearLayout>
@@ -102,11 +102,12 @@
 
                 <EditText
                     android:id="@+id/setting_bank"
-                    android:layout_width="150dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:background="#33ffffff"
                     android:hint="은행 이름"
                     android:paddingLeft="15dp"
+                    android:singleLine="true"
                     android:textColor="#aa000000"
                     android:textColorHint="#88000000"
                     android:textSize="20sp" />
@@ -123,14 +124,16 @@
 
                 <EditText
                     android:id="@+id/setting_account"
-                    android:layout_width="200dp"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:background="#33ffffff"
                     android:hint="계좌 번호"
                     android:paddingLeft="15dp"
+                    android:singleLine="true"
                     android:textColor="#aa000000"
                     android:textColorHint="#88000000"
                     android:textSize="20sp" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -145,6 +148,17 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6" />
+        android:layout_weight="4.5" />
+
+    <Button
+        android:id="@+id/setting_save"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="#5a876e"
+        android:gravity="center"
+        android:text="저장"
+        android:textColor="#ffffff"
+        android:textSize="23dp" />
 
 </LinearLayout>

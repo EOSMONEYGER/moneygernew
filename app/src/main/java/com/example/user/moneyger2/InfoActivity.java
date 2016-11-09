@@ -2,6 +2,7 @@ package com.example.user.moneyger2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,15 +35,24 @@ public class InfoActivity extends Activity {
         // 만들어 둔 IntentAdapter를 RecyclerView에 셋팅
         info_actView.setAdapter(new InfoActAdapter(InfoActivity.this, getInfoActList()));
 
+
+
+
         ImageButton info_act_send_btn = (ImageButton)findViewById(R.id.info_act_send_btn);
 
         info_act_send_btn.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
+
+                SharedPreferences SP = getSharedPreferences("", 0);
+                String strName = SP.getString("name", "");
+                String strBank = SP.getString("bank", "");
+                String strAccount = SP.getString("account", "");
+
                 Uri uri = Uri.parse("smsto:01022865413");
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n김나용 신한 110438358091\n으로 입금해주세요.^^");
+                intent.putExtra("sms_body","[MONEYGER]\n2016.05.17\nEOS 정기회합 비용\n10000원\n"+strName+"에게 "+strBank+" "+strAccount+"로\n"+"입금해주세요.^^");
                 startActivity(intent);
             }
         });
