@@ -8,12 +8,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 import com.example.user.moneyger2.adapter.InfoAdapter;
 import com.example.user.moneyger2.data.InfoData;
 
@@ -63,6 +62,7 @@ public class InfoFragment extends Fragment {
                 ch = csr.getString(4);
             }
         }
+        csr.close();
 
         return infoList;
     }

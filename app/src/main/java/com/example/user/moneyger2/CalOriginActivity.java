@@ -32,8 +32,7 @@ public class CalOriginActivity extends Activity{
     private RecyclerView cal_originView;
     private EditText cal_origin_edit;
     private ArrayList<CalOriginData> cal_originList = new ArrayList<>();
-    public static ArrayList<CalOriginData> checkedList = new ArrayList<>();
-    public static ArrayList<CalOriginData> searchList = new ArrayList<>();
+    private ArrayList<CalOriginData> searchList = new ArrayList<>();
 
     int totalMoney = 0;
 
@@ -44,7 +43,6 @@ public class CalOriginActivity extends Activity{
 
         Intent intent = getIntent();
         totalMoney = intent.getIntExtra("total_money",0);
-        checkedList.clear();
 
         cal_originView = (RecyclerView)findViewById(R.id.cal_addressbook_view);
         cal_origin_edit = (EditText)findViewById(R.id.cal_origin_search_edit);
@@ -58,17 +56,24 @@ public class CalOriginActivity extends Activity{
         cal_origin_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String names[] = new String[cal_originList.size()];
+                String ph_num[] = new String[cal_originList.size()];
 
+                int cnt=0;
                 for(int i = 0; i < cal_originList.size(); i++) {
                     if(cal_originList.get(i).isCheck_state()) {
-                        checkedList.add(cal_originList.get(i));
+                        names[cnt] = cal_originList.get(i).getName();
+                        ph_num[cnt] = cal_originList.get(i).getPh_num();
+                        cnt++;
                     }
                 }
 
                 Intent intent = new Intent(CalOriginActivity.this, CalResultListActivity.class);
                 intent.putExtra("SOcheck",2);
+                intent.putExtra("names",names);
+                intent.putExtra("ph_num",ph_num);
                 intent.putExtra("total_money", totalMoney);
-                intent.putExtra("total_person",checkedList.size());
+                intent.putExtra("total_person",cnt);
                 startActivity(intent);
                 finish();
             }
@@ -82,19 +87,6 @@ public class CalOriginActivity extends Activity{
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                /*String s = charSequence.toString();
-
-                if(s.length() == 0) {
-                    cal_originView.setAdapter(new CalOriginAdapter(CalOriginActivity.this, cal_originList));
-                } else {
-                    for (int j = 0; j < cal_originList.size(); j++) {
-                        if (cal_originList.get(j).getName().contains(s)) {
-                            searchList.add(cal_originList.get(j));
-                        }
-                    }
-                    cal_originView.setAdapter(new CalOriginAdapter(CalOriginActivity.this, searchList));
-                }
-*/
             }
 
             @Override

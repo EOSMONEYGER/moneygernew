@@ -3,23 +3,18 @@ package com.example.user.moneyger2;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 
 import java.util.Calendar;
-import java.util.Locale;
 
 /**
  * Created by User on 2016-11-09.

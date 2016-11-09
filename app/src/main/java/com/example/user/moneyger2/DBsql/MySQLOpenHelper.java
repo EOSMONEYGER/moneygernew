@@ -1,4 +1,4 @@
-package com.example.user.moneyger2.DBsql;
+package com.example.user.moneyger2.dbsql;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -40,9 +40,6 @@ public class MySQLOpenHelper extends SQLiteOpenHelper {
                 "day integer);";
         db.execSQL(query); // 작성한 쿼리문 실행
 
-        db.execSQL("CREATE TABLE datelist(cid INTEGER PRIMARY KEY AUTOINCREMENT, gathering TEXT, year INTEGER, month INTEGER, day INTEGER);");
-
-        db.execSQL("create table namelist(cid integer primary key autoincrement, name text, phonenum text, debt integer);");
     }
 
     /**
@@ -59,8 +56,6 @@ public class MySQLOpenHelper extends SQLiteOpenHelper {
         String query = "drop table if exists debtlist";
         db.execSQL(query);
 
-        db.execSQL("drop table if exists datelist");
-        db.execSQL("drop table if exists namelist");
 
         onCreate(db);
     }

@@ -13,10 +13,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.user.moneyger2.DBsql.MySQLOpenHelper;
+import com.example.user.moneyger2.dbsql.MySQLOpenHelper;
 import com.example.user.moneyger2.adapter.InfoActAdapter;
 import com.example.user.moneyger2.data.InfoActData;
-import com.example.user.moneyger2.data.InfoData;
 
 import java.util.ArrayList;
 
@@ -83,6 +82,7 @@ public class InfoActivity extends Activity {
         while(csr.moveToNext()){//커서를 처음레코드부터 마지막레코드까지 이동하며 반복.//
             info_actList.add(new InfoActData(false,csr.getString(1),csr.getString(3)+"원"));
         };
+        csr.close();
 
         return info_actList;
     }
