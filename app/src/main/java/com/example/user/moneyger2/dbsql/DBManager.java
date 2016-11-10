@@ -62,16 +62,34 @@ public class DBManager {
         return search;
     }
 
-    public void update(SearchData contact) {
-        ContentValues values = new ContentValues();
+    public void update(SearchData contact, int minus_debt) {
 
-        /** 각 column 의 값 셋팅 **/
-        values.put("name", contact.getName());
-        values.put("phonenum", contact.getPh_num());
-        values.put("debt", 0);
+        Cursor c = db.query(TABLE_NAME, null, null, null, null, null, null);//선택 조건 없는 쿼리 실행(=DB 테이블의 레코드 전체를가져옴)
+
+        while (c.moveToNext()) {
+            if(contact.getPh_num().equals(c.getString(c.getColumnIndex("phonenum"))) ){
+                if(c.getInt(c.getColumnIndex("debt")) <= minus_debt) {
+                    ContentValues values = new ContentValues();
+
+                    minus_debt -= c.getInt(c.getColumnIndex("debt"));
+
+                    values.put("name", contact.getName());
+                    values.put("phonenum", contact.getPh_num());
+                    values.put("debt", 0);
+                    db.update(TABLE_NAME, values, "cid=" + c.getInt(c.getColumnIndex("cid")), null);
+                } else {
+                    int debt = c.getInt(c.getColumnIndex("debt")) - minus_debt;
+                    ContentValues values = new ContentValues();
+
+                    values.put("name", contact.getName());
+                    values.put("phonenum", contact.getPh_num());
+                    values.put("debt", debt);
+                    db.update(TABLE_NAME, values, "cid=" + c.getInt(c.getColumnIndex("cid")), null);
+                }
+            }
+        }
 
         // contact table 의 data 중 cid 값이 입력받은 contact data 의 id 값과 일치하는 data 의 값을 수정합니다.
-        db.update(TABLE_NAME, values, "phonenum=?", new String[]{contact.getPh_num() + ""});
 
         Toast.makeText(context, "수정되었습니다.", Toast.LENGTH_SHORT).show();
     }

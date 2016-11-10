@@ -31,7 +31,6 @@ public class SearchData {
         this.check_state = check_state;
     }
 
-
     public String getDebt() {
         return debt;
     }

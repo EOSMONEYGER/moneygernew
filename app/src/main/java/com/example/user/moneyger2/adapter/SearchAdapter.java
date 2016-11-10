@@ -82,6 +82,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(final View view) {
+                    //new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()));
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());     // 여기서 this는 Activity의 this
 
                     // 여기서 부터는 알림창의 속성 설정
@@ -91,7 +93,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                             .setPositiveButton("확인", new DialogInterface.OnClickListener(){
                                 // 확인 버튼 클릭시 설정
                                 public void onClick(DialogInterface dialog, int whichButton){
-                                    new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()));
+                                    new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()),10000);
                                 }
                             })
                             .setNegativeButton("취소", new DialogInterface.OnClickListener(){

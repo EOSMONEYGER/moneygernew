@@ -110,6 +110,11 @@ public class SearchFragment extends Fragment{
             @Override
             public void onClick(View view) {
 
+                String ph_num, debt;
+                for(int i=0;i<search_fragList.size();i++){
+                    ph_num = search_fragList.get(i).getPh_num();
+                    debt = search_fragList.get(i).getDebt();
+                }
                 Uri uri = Uri.parse("smsto:01022865413");
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
                 intent.putExtra("sms_body","[MONEYGER]\n"+"2016.11.13\n"+"EOS 정기 회합"+"\n작은딸애게 신한 110438358091"+"\n으로 입금해주세요.^^");
