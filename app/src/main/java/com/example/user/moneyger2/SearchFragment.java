@@ -117,7 +117,7 @@ public class SearchFragment extends Fragment{
                 }
                 Uri uri = Uri.parse("smsto:01022865413");
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                intent.putExtra("sms_body","[MONEYGER]\n"+"2016.11.13\n"+"EOS 정기 회합"+"\n작은딸애게 신한 110438358091"+"\n으로 입금해주세요.^^");
+                intent.putExtra("sms_body","[MONEYGER]\n"+"\n작은딸애게 신한 110438358091"+"\n으로 입금해주세요.^^");
                 startActivity(intent);
             }
         });

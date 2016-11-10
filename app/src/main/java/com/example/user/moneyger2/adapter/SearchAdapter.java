@@ -1,8 +1,7 @@
 package com.example.user.moneyger2.adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +10,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.user.moneyger2.R;
-import com.example.user.moneyger2.data.InfoActData;
+import com.example.user.moneyger2.SearchCheckActivity;
 import com.example.user.moneyger2.data.SearchData;
-import com.example.user.moneyger2.dbsql.DBManager;
 
 import java.util.ArrayList;
 
@@ -84,28 +82,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 public boolean onLongClick(final View view) {
                     //new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()));
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());     // 여기서 this는 Activity의 this
+                    Intent intent = new Intent(context,SearchCheckActivity.class);
+                    context.startActivity(intent);
 
-                    // 여기서 부터는 알림창의 속성 설정
-                    builder.setTitle("1")        // 제목 설정
-                            .setMessage("돈을 갚았습니까")        // 메세지 설정
-                            .setCancelable(false)        // 뒤로 버튼 클릭시 취소 가능 설정
-                            .setPositiveButton("확인", new DialogInterface.OnClickListener(){
-                                // 확인 버튼 클릭시 설정
-                                public void onClick(DialogInterface dialog, int whichButton){
-                                    new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()),10000);
-                                }
-                            })
-                            .setNegativeButton("취소", new DialogInterface.OnClickListener(){
-                                // 취소 버튼 클릭시 설정
-                                public void onClick(DialogInterface dialog, int whichButton){
-                                    dialog.cancel();
-                                }
-                            });
-
-
-                    AlertDialog dialog = builder.create();    // 알림창 객체 생성
-                    dialog.show();    // 알림창 띄우기
                     return false;
                 }
             });

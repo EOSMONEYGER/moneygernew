@@ -35,6 +35,8 @@
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
         <activity android:name=".CalResNameActivity"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
+        <activity android:name=".SearchCheckActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
     </application>
 
