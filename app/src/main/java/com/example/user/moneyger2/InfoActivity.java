@@ -67,17 +67,18 @@ public class InfoActivity extends Activity {
                 String strAccount = SP.getString("account", "");
 
 
-                int intPh_num = 0; String Debt = ""; String Date = ""; String Gathering = "";
+                int intPh_num = 0; String Debt = ""; String Date = "";
+                String strPh_num = null;
                 for(int i=0;i<info_actList.size();i++){
                     if(info_actList.get(i).isCheck_state() == true){
-                        String strPh_num = info_actList.get(i).getPh_num();
-                        intPh_num = Integer.parseInt(strPh_num);
+                        strPh_num = info_actList.get(i).getPh_num();
+                        Date += info_actList.get(i).getYear() + "." +info_actList.get(i).getMonth() + "." + info_actList.get(i).getDay();
                         Debt = info_actList.get(i).getDebt();
 
                     }
                 }
 
-                Uri uri = Uri.parse("smsto://" + intPh_num);
+                Uri uri = Uri.parse("smsto://" + strPh_num);
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
                 intent.putExtra("sms_body","[MONEYGER]\n"+"2016.11.10\n"+title.getText()+"에서 발생한\n비용 "+Debt+"을\n"+strName+"에게 "+strBank+" "+strAccount+"로\n"+"입금해주세요.^^");
                 startActivity(intent);
@@ -99,7 +100,7 @@ public class InfoActivity extends Activity {
         Cursor csr = db.query(TABLE_NAME, null,"gathering=?",new String[]{gathering},null,null,null);
 
         while(csr.moveToNext()){//커서를 처음레코드부터 마지막레코드까지 이동하며 반복.//
-            info_actList.add(new InfoActData(false,csr.getString(1),csr.getString(3)+"원",csr.getString(csr.getColumnIndex("phonenum"))));
+            info_actList.add(new InfoActData(false,csr.getString(1),csr.getString(3)+"원",csr.getString(csr.getColumnIndex("phonenum")), csr.getInt(csr.getColumnIndex("year")),csr.getInt(csr.getColumnIndex("month")),csr.getInt(csr.getColumnIndex("day"))));
         };
         csr.close();
 
