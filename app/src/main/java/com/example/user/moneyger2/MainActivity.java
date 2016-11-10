@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         setContentView(R.layout.activity_main);
 
+        Intent gi = getIntent();
+        int firstFragment = gi.getIntExtra("fragnum",0);
+
         // FragmentManager 객체 초기화
         fm = getSupportFragmentManager();
 
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         settingBtn.setOnClickListener(this);
         questionBtn.setOnClickListener(this);
 
-        replaceFragment(FRAGMENT_CAL);
+        replaceFragment(firstFragment);
     }
 
     private void replaceFragment(int position) {

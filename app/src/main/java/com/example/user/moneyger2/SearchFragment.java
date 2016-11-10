@@ -1,12 +1,15 @@
 package com.example.user.moneyger2;
 
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.telephony.SmsManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.user.moneyger2.adapter.SearchAdapter;
 import com.example.user.moneyger2.data.SearchData;
@@ -110,15 +114,26 @@ public class SearchFragment extends Fragment{
             @Override
             public void onClick(View view) {
 
-                String ph_num, debt;
-                for(int i=0;i<search_fragList.size();i++){
-                    ph_num = search_fragList.get(i).getPh_num();
-                    debt = search_fragList.get(i).getDebt();
+                SharedPreferences SP = getActivity().getSharedPreferences("", 0);
+                String strName = SP.getString("name", "");
+                String strBank = SP.getString("bank", "");
+                String strAccount = SP.getString("account", "");
+
+                String Debt = "";
+                String Date = "";
+                String strPh_num = null;
+
+                for (int i = 0; i < search_fragList.size(); i++) {
+                    if (search_fragList.get(i).isCheck_state() == true) {
+                        // 정보 불러오기
+                        strPh_num = search_fragList.get(i).getPh_num();
+                        Debt = search_fragList.get(i).getDebt();
+
+                        SmsManager smsManager = android.telephony.SmsManager.getDefault();
+                        smsManager.sendTextMessage(strPh_num, null, Debt+"\n"+strBank + " " + strAccount + "로\n" + "입금해주세요.^^\n", null, null);
+                    }
                 }
-                Uri uri = Uri.parse("smsto:01022865413");
-                Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                intent.putExtra("sms_body","[MONEYGER]\n"+"\n작은딸애게 신한 110438358091"+"\n으로 입금해주세요.^^");
-                startActivity(intent);
+                Toast.makeText(getContext(), "문자 전송을 완료하였습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 

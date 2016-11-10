@@ -71,7 +71,6 @@ public class InfoActivity extends Activity {
                 String strBank = SP.getString("bank", "");
                 String strAccount = SP.getString("account", "");
 
-                int intPh_num = 0;
                 String Debt = "";
                 String Date = "";
                 String strPh_num = null;
@@ -83,28 +82,11 @@ public class InfoActivity extends Activity {
                         Date += info_actList.get(i).getMonth() + "." + info_actList.get(i).getDay();
                         Debt = info_actList.get(i).getDebt();
 
-                        // SMS관련
-                        String SENT = "SMS_SENT";
-                        String DELIVERED = "SMS_DELIVERED";
-
-                        PendingIntent sentPI = PendingIntent.getBroadcast(getBaseContext(), 0, new Intent(SENT), 0);
-                        PendingIntent deliveredPI = PendingIntent.getBroadcast(getBaseContext(), 0, new Intent(DELIVERED), 0);
-
-                        registerReceiver(new BroadcastReceiver() {
-                            @Override
-                            public void onReceive(Context context, Intent arg1) {
-                                switch (getResultCode()) {
-                                    case Activity.RESULT_OK:
-                                        Toast.makeText(getBaseContext(), "문자 전송을 완료하였습니다.", Toast.LENGTH_SHORT).show();
-                                        break;
-                                }
-                            }
-                        }, new IntentFilter(SENT));
-
                         SmsManager smsManager = android.telephony.SmsManager.getDefault();
-                        smsManager.sendTextMessage(strPh_num, null, Date+"\n"+title.getText()+"\n"+Debt+"\n"+strBank + " " + strAccount + "로\n" + "입금해주세요.^^\n", null, null);
+                        smsManager.sendTextMessage(strPh_num, null, Date+" "+title.getText()+"\n"+Debt+"\n"+strBank + " " + strAccount + "로\n" + "입금해주세요.^^\n", null, null);
                     }
                 }
+                Toast.makeText(getBaseContext(), "문자 전송을 완료하였습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 

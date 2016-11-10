@@ -80,9 +80,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(final View view) {
-                    //new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()));
+                    //new DBManager(view.getContext()).update(new SearchData(false,search.getName(),search.getPh_num(),search.getDebt()),10000);
 
                     Intent intent = new Intent(context,SearchCheckActivity.class);
+                    intent.putExtra("NAME",search.getName());
+                    intent.putExtra("PHNUM",search.getPh_num());
+                    intent.putExtra("DEBT",search.getDebt());
                     context.startActivity(intent);
 
                     return false;

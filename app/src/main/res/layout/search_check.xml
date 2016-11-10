@@ -14,9 +14,11 @@
         android:ems="10"
         android:gravity="center"
         android:hint="얼마를 삭감해드릴까요?"
+        android:inputType="number"
         android:textColorHint="#ff000000"
         android:textCursorDrawable="@null"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:id="@+id/search_check_edit" />
 
     <Button
         android:id="@+id/search_check_btn"
